@@ -42,7 +42,8 @@
 #ifndef ELAST
 #define ELAST 500
 #endif
-
+/* Armtel extention */
+#define DAHDI_ARMTEL_EXT
 /* Per-span configuration values */
 #define DAHDI_CONFIG_TXLEVEL	7				/* bits 0-2 are tx level */
 
@@ -238,7 +239,9 @@ enum {
 #define DAHDI_LAW_DEFAULT	0	/* Default law for span */
 #define DAHDI_LAW_MULAW		1	/* Mu-law */
 #define DAHDI_LAW_ALAW		2	/* A-law */
-
+#ifdef DAHDI_ARMTEL_EXT
+ #define DAHDI_LAW_ALAWDCN	3	/* A-lawdcn */
+#endif
 #define DAHDI_DIAL_OP_APPEND	1
 #define DAHDI_DIAL_OP_REPLACE	2
 #define DAHDI_DIAL_OP_CANCEL	3
